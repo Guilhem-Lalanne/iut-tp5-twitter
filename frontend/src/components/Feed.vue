@@ -1,5 +1,8 @@
 <template>
-  <div class="feed">
+  <div v-if="loading">
+    {{ loadingText }}
+  </div>
+  <div v-else class="feed">
     <ul>
       <li v-for="tweet in tweets"><tweet :tweet="tweet"/></li>
     </ul>
@@ -11,7 +14,21 @@ import Tweet from './Tweet'
 export default {
   name: 'feed',
   components: {Tweet},
-  props: ['tweets']
+  props: ['tweets', 'loading'],
+  data () {
+    return {
+      language: 'en'
+    }
+  },
+  computed: {
+    loadingText: function () {
+      if (this.language === 'fr') {
+        return 'Chargement des tweets en cours ...'
+      } else {
+        return 'Loading tweets ...'
+      }
+    }
+  }
 }
 </script>
 

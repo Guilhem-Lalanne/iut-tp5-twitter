@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
     <h1>{{ msg }}</h1>
-      <feed :tweets="tweets"/>
+      <feed :tweets="tweets" :loading="isLoading"/>
   </div>
 </template>
 
@@ -14,13 +14,15 @@ export default {
   name: 'timeline',
   data () {
     return {
-      tweets: []
+      tweets: [],
+      isLoading: true
     }
   },
   methods: {
     fetchTweets: function () {
       this.$http.get('http://localhost:8080/list').then(response => {
         this.tweets = response.body
+        this.isLoading = false
       },
       response => {
         // error callback
