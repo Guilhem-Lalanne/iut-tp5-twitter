@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <ul>
       <li v-for="tweet in tweets">
-        {{ tweet }}
+        {{ tweet.auteur }} : {{ tweet.contenu }}
       </li>
     </ul>
   </div>
@@ -14,7 +14,11 @@ export default {
   name: 'hello',
   data () {
     return {
-      tweets: ['tweet 1', 'tweet 2', 'tweet 3']
+      tweets: [
+        {auteur: 'user01', contenu: 'tweet 1'},
+        {auteur: 'user02', contenu: 'tweet 2'},
+        {auteur: 'user03', contenu: 'tweet 3'}
+      ]
     }
   }
 }
