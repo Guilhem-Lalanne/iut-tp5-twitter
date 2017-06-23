@@ -18,11 +18,7 @@ export default {
   name: 'timeline',
   data () {
     return {
-      tweets: [
-        {auteur: 'user01', contenu: 'tweet 1'},
-        {auteur: 'user02', contenu: 'tweet 2'},
-        {auteur: 'user03', contenu: 'tweet 3'}
-      ]
+      tweets: []
     }
   },
   methods: {
