@@ -15,7 +15,9 @@
           <icon name="reply"/>
         </li>
         <li class="button">
-          <icon name="retweet"/>
+          <a @click="retweet()">
+            <icon name="retweet"/>
+          </a>
         </li>
         <li class="button">
           <icon name="heart"/>
@@ -42,6 +44,21 @@
     methods: {
       moment: function (date) {
         return moment(date)
+      },
+      retweet: function () {
+        this.$http.get(
+          'http://localhost:8080/retweet',
+          {
+            responseType: 'text',
+            params: {
+              utilisateur: 'snoopdog',
+              tweet: this.tweet.id
+            }
+          }).then(response => {
+          },
+          response => {
+          // error callback
+          })
       }
     }
   }
