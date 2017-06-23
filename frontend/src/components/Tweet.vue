@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="tweet">
     {{ tweet.auteur }} : {{ tweet.contenu }}
   </div>
 </template>
