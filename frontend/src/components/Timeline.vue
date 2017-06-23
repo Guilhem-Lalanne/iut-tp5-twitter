@@ -3,13 +3,14 @@
     <h1>{{ msg }}</h1>
     <ul>
       <li v-for="tweet in tweets">
-        {{ tweet.auteur }} : {{ tweet.contenu }}
+        <tweet :tweet="tweet"/>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Tweet from './Tweet'
 export default {
   name: 'hello',
   data () {
@@ -20,7 +21,8 @@ export default {
         {auteur: 'user03', contenu: 'tweet 3'}
       ]
     }
-  }
+  },
+  components: {Tweet}
 }
 </script>
 
