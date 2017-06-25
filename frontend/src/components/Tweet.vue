@@ -17,6 +17,7 @@
         <li class="button">
           <a @click="retweet()">
             <icon name="retweet"/>
+            {{ tweet.retweeters.length }}
           </a>
         </li>
         <li class="button">
