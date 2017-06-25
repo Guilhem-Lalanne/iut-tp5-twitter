@@ -1,2 +1,7 @@
 yarn.lock
+./.idea/
+./.idea/workspace.xml
 frontend/.idea
+backend/.idea
+package-lock.json
+node_modules
