@@ -56,6 +56,7 @@
               tweet: this.tweet.id
             }
           }).then(response => {
+            this.$emit('retweeted', this.tweet.id)
           },
           response => {
           // error callback

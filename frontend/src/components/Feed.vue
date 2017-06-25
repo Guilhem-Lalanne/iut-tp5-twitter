@@ -4,7 +4,9 @@
   </div>
   <div v-else class="feed">
     <ul>
-      <li class="tweet" v-for="tweet in tweets"><tweet :tweet="tweet"/></li>
+      <li class="tweet" v-for="tweet in tweets">
+        <tweet :tweet="tweet" @retweeted="retweet"/>
+      </li>
     </ul>
   </div>
 </template>
